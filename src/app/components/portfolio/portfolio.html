@@ -1,0 +1,40 @@
+<header>
+  <a href="#" class="logo">Calsel</a>
+
+  <!-- Кнопка меню для мобильных -->
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="navbar" [class.active]="isMenuOpen">
+    <a href="#" class="active" (click)="closeMenuAndNavigate($event)">Home</a>
+    <a href="" (click)="showComingSoon($event)">Services</a>
+    <a href="" (click)="showComingSoon($event)">Skills</a>
+    <a href="" (click)="showComingSoon($event)">Education</a>
+    <a href="" (click)="showComingSoon($event)">Experience</a>
+    <a href="#contacts" (click)="closeMenuAndNavigate($event)">Contact</a>
+  </nav>
+</header>
+
+<section class="home">
+  <div class="home-content">
+    <h1><span class="hello">Hello!</span> It's Ivan</h1>
+    <h3 class="typing-text">I'm <span></span></h3>
+    <p>I can do some great things for you.</p>
+    <div class="social-icons" id="contacts">
+      <a href=""><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/calsel"><i class="fa-brands fa-github"></i></a>
+      <a href="https://t.me/calsel"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://vk.com/calsel"><i class="fa-brands fa-vk"></i></a>
+    </div>
+    <a href="https://t.me/calsel" class="btn">Hire me</a>
+  </div>
+</section>
+
+<!-- Модальное окно для уведомления -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>В разработке</p>
+  </div>
+</div>
