@@ -39,7 +39,7 @@ export class Portfolio {
     }
   }
 
-  // Закрывать меню при клике вне его области
+  // 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
@@ -48,7 +48,7 @@ export class Portfolio {
     }
   }
 
-  // Закрывать меню при изменении размера окна (на десктопе)
+  //
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     if (window.innerWidth > 995) {
