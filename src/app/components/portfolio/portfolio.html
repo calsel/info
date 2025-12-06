@@ -1,4 +1,5 @@
 <header>
+
   <a href="#" class="logo">Calsel</a>
 
   <!-- Кнопка меню для мобильных -->
@@ -8,18 +9,25 @@
 
   <nav id="navbar" [class.active]="isMenuOpen">
     <a href="#" class="active" (click)="closeMenuAndNavigate($event)">Home</a>
-    <a href="" (click)="showComingSoon($event)">Services</a>
+    <a href="#education" (click)="showComingSoon($event)">Education</a>
     <a href="" (click)="showComingSoon($event)">Skills</a>
-    <a href="" (click)="showComingSoon($event)">Education</a>
     <a href="" (click)="showComingSoon($event)">Experience</a>
     <a href="#contacts" (click)="closeMenuAndNavigate($event)">Contact</a>
   </nav>
 </header>
-
 <section class="home">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
   <div class="home-content">
     <h1><span class="hello">Hello!</span> It's Ivan</h1>
-    <h3 class="typing-text">I'm <span></span></h3>
+    <h3 class="typing-text">
+  <span id="typing-container">
+    <span class="text-white" *ngIf="shouldShowIm()">{{ getImText() }}</span>
+    <span class="text-blue">{{ getProfessionText() }}</span>
+    <span class="cursor" *ngIf="showCursor">|</span>
+  </span>
+    </h3>
     <p>I can do some great things for you.</p>
     <div class="social-icons" id="contacts">
       <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -28,6 +36,62 @@
       <a href="https://vk.com/calsel"><i class="fa-brands fa-vk"></i></a>
     </div>
     <a href="https://t.me/calsel" class="btn">Hire me</a>
+  </div>
+</section>
+
+<section class="education" id='education'>
+  <div class="about__inner container">
+    <div class="about__header">
+      <div class="about__info">
+        <p class="about__subtitle tag"></p>
+        <h2 class="about__title" id="about-title">Образование</h2>
+      </div>
+      <div class="about__description">
+        <p>Мой образовательный путь представляет собой последовательное стремление к профессиональному росту и расширению академического кругозора. Ниже приведена структурированная информация о ключевых этапах моего обучения.</p>
+      </div>
+    </div>
+    <ul class="about__list">
+      <li class="about__item">
+        <a class="about-card tile" href="#">
+          <div class="about-card__image-container">
+            <img class="about_img" src="/img/ppk.png" alt="Пермский политехнический колледж">
+          </div>
+          <div class="about-card__content">
+            <span class="about-card__badge">Образование</span>
+            <h3 class="about-card__title">Сетевое и системное администрирование</h3>
+            <div class="about-card__description">
+              <p><strong>Пермский политехнический колледж имени Н. Г. Славянова</strong></p>
+              <p>Специализация в области сетевых технологий, системного администрирования и информационной безопасности.</p>
+              <p>Сентябрь 2021 - Июль 2025</p>
+            </div>
+            <div class="about-card__footer">
+              <span class="about-card__link">Подробнее</span>
+              <i class="fas fa-arrow-right about-card__icon"></i>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="about__item">
+        <a class="about-card tile" href="#">
+          <div class="about-card__image-container">
+            <img class="about_img" src="/img/PGATU.jpg" alt="Пермский политехнический колледж">
+          </div>
+          <div class="about-card__content">
+            <span class="about-card__badge">Образование</span>
+            <h3 class="about-card__title">Информационные системы и технологии</h3>
+            <div class="about-card__description">
+              <p><strong>Пермский государственный аграрно-технологический университет</strong></p>
+              <p>Разработка и проектирование комплексных IT-систем для бизнеса, автоматизация бизнес-процессов, работа с базами данных и корпоративными решениями.</p>
+              <p>Сентябрь 2025 - Июль 2030</p>
+            </div>
+            <div class="about-card__footer">
+              <span class="about-card__link">Подробнее</span>
+              <i class="fas fa-arrow-right about-card__icon"></i>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
