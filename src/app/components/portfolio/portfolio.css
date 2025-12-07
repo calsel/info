@@ -1,6 +1,3 @@
-
-
-
 /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
 * {
   margin: 0;
@@ -29,20 +26,9 @@ header {
   align-items: center;
   background: #0d1b2a;
   z-index: 1000;
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: 6.25rem 12.5rem;
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-  contain: layout style paint;
 }
-
-@keyframes scrolling-header {
-  to {
-    box-shadow: 0 0 1rem 0 darkgray;
-  }
+header.scrolled {
+  box-shadow: 0 0 1rem 0 darkgray;
 }
 
 .logo {
@@ -87,8 +73,8 @@ nav a.active {
   width: 50px;
   height: 45px;
   border-radius: 8px;
-  background: rgba(76,201,240,.15);
-  border: 1px solid rgba(76,201,240,.35);
+  background: rgba(76, 201, 240, .15);
+  border: 1px solid rgba(76, 201, 240, .35);
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -145,20 +131,20 @@ nav a.active {
 
   nav a:hover,
   nav a.active {
-    background: rgba(76,201,240,.2);
+    background: rgba(76, 201, 240, .2);
     transform: translateX(-5px);
     color: #4cc9f0;
     border-bottom: none;
   }
 
   nav a.active {
-    background: rgba(76,201,240,.15);
+    background: rgba(76, 201, 240, .15);
   }
 
   .menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.65);
+    background: rgba(0, 0, 0, .65);
     opacity: 0;
     visibility: hidden;
     transition: .3s;
@@ -221,8 +207,12 @@ section {
 }
 
 @keyframes slide {
-  0% { transform: translateX(-25%); }
-  100% { transform: translateX(25%); }
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
 }
 
 .home-content {
@@ -345,8 +335,12 @@ section {
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /* ===== EDUCATION ===== */

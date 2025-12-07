@@ -20,6 +20,7 @@ export class Portfolio implements OnInit, OnDestroy {
   private isDeleting = false;
   private typingTimeout: any;
   private cursorInterval: any;
+  private scrollListener!: any;
 
   displayedText = '';
   showCursor = true;
@@ -33,6 +34,13 @@ export class Portfolio implements OnInit, OnDestroy {
       this.showCursor = !this.showCursor;
       this.cdRef.detectChanges();
     }, 500);
+
+    // Добавляем слушатель скролла для header
+    this.scrollListener = this.onWindowScroll.bind(this);
+    window.addEventListener('scroll', this.scrollListener);
+
+    // Инициализируем состояние при загрузке
+    this.onWindowScroll();
   }
 
   ngOnDestroy() {
@@ -42,8 +50,26 @@ export class Portfolio implements OnInit, OnDestroy {
     if (this.cursorInterval) {
       clearInterval(this.cursorInterval);
     }
+
+    // Удаляем слушатель скролла
+    if (this.scrollListener) {
+      window.removeEventListener('scroll', this.scrollListener);
+    }
+
     // Убираем класс при уничтожении компонента
     this.removeMenuOpenClasses();
+  }
+
+  // Обработчик скролла для добавления тени к header
+  private onWindowScroll() {
+    const header = document.querySelector('header');
+    if (header) {
+      if (window.scrollY > 50) { // Порог появления тени
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
   }
 
   // Вспомогательный метод для удаления классов
