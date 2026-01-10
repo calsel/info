@@ -1,0 +1,16 @@
+.feedback-root{
+  max-width:720px;
+  margin:24px auto;
+  padding:16px;
+  border-radius:8px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  color: #222;
+}
+.feedback-root h2{margin:0 0 12px 0}
+label{display:block;margin:8px 0;font-weight:600}
+input, textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+.actions{margin-top:12px}
+button{background:#4f46e5;color:#fff;border:0;padding:10px 14px;border-radius:6px}
+.error{color:#b91c1c;font-size:0.9rem;margin-top:6px}
+.success{color:#047857;font-weight:600;margin-top:12px}

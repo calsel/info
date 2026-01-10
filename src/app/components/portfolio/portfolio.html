@@ -17,9 +17,7 @@
     <a href="#cont" (click)="scrollToSection('cont', $event)">Контакты</a>
   </nav>
 
-  <div class="menu-overlay"
-       [class.active]="isMenuOpen"
-       (click)="closeMenu()"></div>
+  <div class="menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
 </header>
 
 <section class="home">
@@ -29,11 +27,11 @@
   <div class="home-content">
     <h1><span class="hello">Hello!</span> It's Ivan</h1>
     <h3 class="typing-text">
-  <span id="typing-container">
-    <span class="text-white" *ngIf="shouldShowIm()">{{ getImText() }}</span>
-    <span class="text-blue">{{ getProfessionText() }}</span>
-    <span class="cursor" *ngIf="showCursor">|</span>
-  </span>
+      <span id="typing-container">
+        <span class="text-white" *ngIf="shouldShowIm()">{{ getImText() }}</span>
+        <span class="text-blue">{{ getProfessionText() }}</span>
+        <span class="cursor" *ngIf="showCursor">|</span>
+      </span>
     </h3>
     <p>I can do some great things for you.</p>
     <div class="social-icons" id="contacts">
@@ -46,7 +44,7 @@
   </div>
 </section>
 
-<section class="education" id='education'>
+<section class="education" id="education">
   <div class="about__inner container">
     <div class="about__header">
       <div class="about__info">
@@ -54,21 +52,32 @@
         <h2 class="about__title" id="about-title">Образование</h2>
       </div>
       <div class="about__description">
-        <p>Мой образовательный путь представляет собой последовательное стремление к профессиональному росту и расширению академического кругозора. Ниже приведена структурированная информация о ключевых этапах моего обучения.</p>
+        <p>
+          Мой образовательный путь представляет собой последовательное стремление к
+          профессиональному росту и расширению академического кругозора. Ниже приведена
+          структурированная информация о ключевых этапах моего обучения.
+        </p>
       </div>
     </div>
     <ul class="about__list">
       <li class="about__item">
         <a class="about-card tile" href="#">
           <div class="about-card__image-container">
-            <img class="about_img" src="https://github.com/calsel/info/blob/main/public/img/ppk.png?raw=true" alt="Пермский политехнический колледж">
+            <img
+              class="about_img"
+              src="https://github.com/calsel/info/blob/main/public/img/ppk.png?raw=true"
+              alt="Пермский политехнический колледж"
+            />
           </div>
           <div class="about-card__content">
             <span class="about-card__badge">Образование</span>
             <h3 class="about-card__title">Сетевое и системное администрирование</h3>
             <div class="about-card__description">
               <p><strong>Пермский политехнический колледж имени Н. Г. Славянова</strong></p>
-              <p>Специализация в области сетевых технологий, системного администрирования и информационной безопасности.</p>
+              <p>
+                Специализация в области сетевых технологий, системного администрирования и
+                информационной безопасности.
+              </p>
               <p>Сентябрь 2021 - Июль 2025</p>
             </div>
             <div class="about-card__footer">
@@ -81,14 +90,21 @@
       <li class="about__item">
         <a class="about-card tile" href="#">
           <div class="about-card__image-container">
-            <img class="about_img" src="https://github.com/calsel/info/blob/main/public/img/PGATU.jpg?raw=true" alt="Пермский государственный аграрно-технологический университет">
+            <img
+              class="about_img"
+              src="https://github.com/calsel/info/blob/main/public/img/PGATU.jpg?raw=true"
+              alt="Пермский государственный аграрно-технологический университет"
+            />
           </div>
           <div class="about-card__content">
             <span class="about-card__badge">Образование</span>
             <h3 class="about-card__title">Информационные системы и технологии</h3>
             <div class="about-card__description">
               <p><strong>Пермский государственный аграрно-технологический университет</strong></p>
-              <p>Разработка и проектирование комплексных IT-систем для бизнеса, автоматизация бизнес-процессов, работа с базами данных и корпоративными решениями.</p>
+              <p>
+                Разработка и проектирование комплексных IT-систем для бизнеса, автоматизация
+                бизнес-процессов, работа с базами данных и корпоративными решениями.
+              </p>
               <p>Сентябрь 2025 - Июль 2030</p>
             </div>
             <div class="about-card__footer">
@@ -117,7 +133,9 @@
           </li>
           <li class="skills-list__item">
             <span class="skill-category">CSS</span>
-            <span class="skill-details">(CSS3), SASS (SCSS), PostCSS, Bootstrap, Tailwind, Анимации</span>
+            <span class="skill-details"
+              >(CSS3), SASS (SCSS), PostCSS, Bootstrap, Tailwind, Анимации</span
+            >
           </li>
           <li class="skills-list__item">
             <span class="skill-category">JavaScript</span>
@@ -128,7 +146,7 @@
             <span class="skill-details"></span>
           </li>
           <li class="skills-list__item">
-            <span class="skill-category">Angular</span>
+            <span class="skill-category">React, Next js</span>
             <span class="skill-details"></span>
           </li>
           <li class="skills-list__item">
@@ -147,27 +165,22 @@
       <div class="skills-column__content">
         <ul class="skills-list">
           <li class="skills-list__item">
-            Я мотивирован совершенствовать свои навыки, постоянно изучаю новые технологии в своей сфере деятельности
+            Я мотивирован совершенствовать свои навыки, постоянно изучаю новые технологии в своей
+            сфере деятельности
           </li>
-          <li class="skills-list__item">
-            Я ответственно отношусь к срокам
-          </li>
-          <li class="skills-list__item">
-            Я внимателен к деталям технического задания
-          </li>
+          <li class="skills-list__item">Я ответственно отношусь к срокам</li>
+          <li class="skills-list__item">Я внимателен к деталям технического задания</li>
           <li class="skills-list__item">
             Я пишу подробные отчеты о проделанной работе, если это требуется
           </li>
-          <li class="skills-list__item">
-            Я умею решать конфликтные ситуации
-          </li>
+          <li class="skills-list__item">Я умею решать конфликтные ситуации</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="exp" id='exp'>
+<section class="exp" id="exp">
   <div class="exp__header">
     <h2 class="exp__title">Мой <span>опыт</span></h2>
     <p class="exp__subtitle">Проекты, над которыми я работал и которые демонстрируют мои навыки</p>
@@ -180,12 +193,18 @@
       </div>
       <div class="exp__item-title-group">
         <h3 class="exp__item-title">Сайт-портфолио</h3>
-        <p class="exp__item-subtitle">Современный адаптивный сайт-портфолио, созданный на Angular и TypeScript</p>
+        <p class="exp__item-subtitle">
+          Современный адаптивный сайт-портфолио, созданный на Angular и TypeScript
+        </p>
       </div>
     </div>
 
     <div class="exp__item-description">
-      <p>Полностью адаптивный сайт-портфолио, демонстрирующий мои навыки и проекты. Создан с использованием Angular, TypeScript, SCSS и современных возможностей CSS. Включает плавные анимации, адаптивный дизайн и интерактивные элементы.</p>
+      <p>
+        Полностью адаптивный сайт-портфолио, демонстрирующий мои навыки и проекты. Создан с
+        использованием Angular, TypeScript, SCSS и современных возможностей CSS. Включает плавные
+        анимации, адаптивный дизайн и интерактивные элементы.
+      </p>
     </div>
 
     <div class="exp__item-tech">
@@ -235,12 +254,17 @@
       </div>
       <div class="exp__item-title-group">
         <h3 class="exp__item-title">Angular Task Planner</h3>
-        <p class="exp__item-subtitle">Производительное приложение для управления задачами на Angular 17+</p>
+        <p class="exp__item-subtitle">
+          Производительное приложение для управления задачами на Angular 17+
+        </p>
       </div>
     </div>
 
     <div class="exp__item-description">
-      <p>Современное Angular приложение для управления задачами с использованием последних версий Angular (17+). Приложение включает полный цикл разработки: от настройки проекта до деплоя.</p>
+      <p>
+        Современное Angular приложение для управления задачами с использованием последних версий
+        Angular (17+). Приложение включает полный цикл разработки: от настройки проекта до деплоя.
+      </p>
 
       <div class="exp__features">
         <div class="exp__feature">
@@ -288,7 +312,6 @@
         <span>Angular Material</span>
       </div>
     </div>
-
     <div class="exp__item-details">
       <div class="exp__detail">
         <h4 class="exp__detail-title">Ключевые особенности:</h4>
@@ -308,7 +331,194 @@
         <i class="fab fa-github"></i>
         <span>GitHub</span>
       </a>
-      <a href="https://calsel.github.io/planner/planner" class="exp__link exp__link--demo" target="_blank">
+      <a
+        href="https://calsel.github.io/planner/planner"
+        class="exp__link exp__link--demo"
+        target="_blank"
+      >
+        <i class="fas fa-external-link-alt"></i>
+        <span>Демо</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="exp__item">
+    <div class="exp__item-header">
+      <div class="exp__item-badge">
+        <span class="exp__item-date">Январь 2026</span>
+      </div>
+      <div class="exp__item-title-group">
+        <h3 class="exp__item-title">House Staff Shop</h3>
+        <p class="exp__item-subtitle">Интернет-магазин мебели с корзиной покупок</p>
+      </div>
+    </div>
+
+    <div class="exp__item-description">
+      <p>
+        Полнофункциональный интернет-магазин мебели, разработанный на Next.js. Реализован каталог
+        товаров, интерактивная корзина, фильтрация по категориям и адаптивный дизайн.
+      </p>
+
+      <div class="exp__features">
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Next.js + React</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Модульный SCSS</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Корзина товаров</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Адаптивная верстка</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp__item-tech">
+      <div class="tech-tag">
+        <i class="fab fa-react"></i>
+        <!-- Иконка React вместо Angular -->
+        <span>Next.js 15</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fab fa-js-square"></i>
+        <span>JavaScript (ES6+)</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fab fa-react"></i>
+        <span>React Hooks</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fab fa-sass"></i>
+        <span>SCSS / CSS Modules</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart Logic</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fas fa-mobile-alt"></i>
+        <span>Responsive</span>
+      </div>
+    </div>
+
+    <div class="exp__item-details">
+      <div class="exp__detail">
+        <h4 class="exp__detail-title">Ключевые особенности:</h4>
+        <ul class="exp__detail-list">
+          <li>Каталог товаров с динамическим рендерингом</li>
+          <li>Добавление и удаление товаров из корзины</li>
+          <li>Фильтрация товаров по категориям (стулья, столы, диваны)</li>
+          <li>Анимированный интерфейс и эффекты при наведении</li>
+          <li>Полная адаптивность под мобильные устройства</li>
+          <li>Современная архитектура на базе компонентов</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp__item-links">
+      <a style="pointer-events: none" href="" class="exp__link" target="_blank">
+        <i class="fab fa-github" ></i>
+        <span>GitHub</span>
+      </a>
+      <a
+        href="https://shop-nextjs-ecru.vercel.app/"
+        class="exp__link exp__link--demo"
+        target="_blank"
+      >
+        <i class="fas fa-external-link-alt"></i>
+        <span>Демо</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="exp__item">
+    <div class="exp__item-header">
+      <div class="exp__item-badge">
+        <span class="exp__item-date">Январь 2026</span>
+      </div>
+      <div class="exp__item-title-group">
+        <h3 class="exp__item-title">Telegram Support Bot</h3>
+        <p class="exp__item-subtitle">Бот для управления заявками и обратной связью</p>
+      </div>
+    </div>
+
+    <div class="exp__item-description">
+      <p>
+        Интеграция Telegram-бота в Next.js проект. Система позволяет получать заявки с сайта прямо в
+        мессенджер, управлять статусами обращений через команды бота и вести базу данных клиентов.
+      </p>
+
+      <div class="exp__features">
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Telegram API</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Node.js Backend</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Database Integration</span>
+        </div>
+        <div class="exp__feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Webhooks</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp__item-tech">
+      <div class="tech-tag">
+        <i class="fab fa-telegram"></i>
+        <span>Telegraf.js</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fab fa-js-square"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fab fa-node-js"></i>
+        <span>Next.js API Routes</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fas fa-database"></i>
+        <span>SQLite / Prisma</span>
+      </div>
+      <div class="tech-tag">
+        <i class="fas fa-server"></i>
+        <span>Vercel Deploy</span>
+      </div>
+    </div>
+
+    <div class="exp__item-details">
+      <div class="exp__detail">
+        <h4 class="exp__detail-title">Ключевые особенности:</h4>
+        <ul class="exp__detail-list">
+          <li>Мгновенные уведомления о новых заявках в Telegram</li>
+          <li>Админ-панель прямо в чате (команды /start, /orders)</li>
+          <li>Смена статусов заявок через Inline-кнопки</li>
+          <li>Безопасное хранение токенов и данных пользователей</li>
+          <li>Работа через Webhook для экономии ресурсов сервера</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp__item-links">
+      <a style="pointer-events: none" href="https://github.com/calsel/planner" class="exp__link" target="_blank">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a
+        href="https://test-xnec.vercel.app/"
+        class="exp__link exp__link--demo"
+        target="_blank"
+      >
         <i class="fas fa-external-link-alt"></i>
         <span>Демо</span>
       </a>
@@ -326,18 +536,44 @@
           <span class="footer__logo-text">CALSEL</span>
           <span class="footer__logo-dot"></span>
         </a>
-        <p class="footer__tagline">Разработчик, создающий современные и интерактивные веб-приложения</p>
+        <p class="footer__tagline">
+          Разработчик, создающий современные и интерактивные веб-приложения
+        </p>
         <div class="footer__social">
-          <a href="https://github.com/calsel" class="footer__social-link" target="_blank" (click)="navigateTo($event, 'https://github.com/calsel')" aria-label="GitHub">
+          <a
+            href="https://github.com/calsel"
+            class="footer__social-link"
+            target="_blank"
+            (click)="navigateTo($event, 'https://github.com/calsel')"
+            aria-label="GitHub"
+          >
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://t.me/calsel" class="footer__social-link" target="_blank" (click)="navigateTo($event, 'https://t.me/calsel')" aria-label="Telegram">
+          <a
+            href="https://t.me/calsel"
+            class="footer__social-link"
+            target="_blank"
+            (click)="navigateTo($event, 'https://t.me/calsel')"
+            aria-label="Telegram"
+          >
             <i class="fab fa-telegram"></i>
           </a>
-          <a href="https://vk.com/calsel" class="footer__social-link" target="_blank" (click)="navigateTo($event, 'https://vk.com/calsel')" aria-label="VK">
+          <a
+            href="https://vk.com/calsel"
+            class="footer__social-link"
+            target="_blank"
+            (click)="navigateTo($event, 'https://vk.com/calsel')"
+            aria-label="VK"
+          >
             <i class="fab fa-vk"></i>
           </a>
-          <a href="https://instagram.com/calsel" class="footer__social-link" target="_blank" (click)="navigateTo($event, 'https://instagram.com/calsel')" aria-label="Instagram">
+          <a
+            href="https://instagram.com/calsel"
+            class="footer__social-link"
+            target="_blank"
+            (click)="navigateTo($event, 'https://instagram.com/calsel')"
+            aria-label="Instagram"
+          >
             <i class="fab fa-instagram"></i>
           </a>
         </div>
@@ -347,10 +583,29 @@
         <div class="footer__column">
           <h3 class="footer__column-title">Навигация</h3>
           <ul class="footer__list">
-            <li><a href="#home" class="footer__link" (click)="scrollToSection('home', $event)">Главная</a></li>
-            <li><a href="#education" class="footer__link" (click)="scrollToSection('education', $event)">Образование</a></li>
-            <li><a href="#skills" class="footer__link" (click)="scrollToSection('skills', $event)">Навыки</a></li>
-            <li><a href="#exp" class="footer__link" (click)="scrollToSection('exp', $event)">Проекты</a></li>
+            <li>
+              <a href="#home" class="footer__link" (click)="scrollToSection('home', $event)"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a
+                href="#education"
+                class="footer__link"
+                (click)="scrollToSection('education', $event)"
+                >Образование</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="footer__link" (click)="scrollToSection('skills', $event)"
+                >Навыки</a
+              >
+            </li>
+            <li>
+              <a href="#exp" class="footer__link" (click)="scrollToSection('exp', $event)"
+                >Проекты</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -359,7 +614,9 @@
           <ul class="footer__list">
             <li class="footer__contact-item">
               <i class="fas fa-envelope"></i>
-              <a href="mailto:ivandetad@gmail.com" class="footer__email" (click)="sendEmail($event)">ivandetad@gmail.com</a>
+              <a href="mailto:ivandetad@gmail.com" class="footer__email" (click)="sendEmail($event)"
+                >ivandetad@gmail.com</a
+              >
             </li>
             <li class="footer__contact-item">
               <i class="fas fa-map-marker-alt"></i>
@@ -371,7 +628,7 @@
         <div class="footer__column">
           <h3 class="footer__column-title">Технологии</h3>
           <div class="footer__tech">
-            <span class="footer__tech-tag">Angular</span>
+            <span class="footer__tech-tag">Angular, React, Vue JS, Next JS</span>
             <span class="footer__tech-tag">TypeScript</span>
             <span class="footer__tech-tag">JavaScript</span>
             <span class="footer__tech-tag">HTML5/CSS3</span>
@@ -397,7 +654,12 @@
           <i class="fas fa-arrow-up"></i>
           <span>Наверх</span>
         </a>
-        <a href="https://t.me/calsel" class="footer__hire-btn" target="_blank" (click)="navigateTo($event, 'https://t.me/calsel')">
+        <a
+          href="https://t.me/calsel"
+          class="footer__hire-btn"
+          target="_blank"
+          (click)="navigateTo($event, 'https://t.me/calsel')"
+        >
           <i class="fab fa-telegram"></i>
           <span>Связаться</span>
         </a>

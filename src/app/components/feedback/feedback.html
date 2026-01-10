@@ -1,0 +1,29 @@
+<section class="feedback-root">
+  <h2>Обратная связь</h2>
+
+  <form (ngSubmit)="submit()" #f="ngForm" novalidate>
+    <label>
+      Имя
+      <input name="name" [(ngModel)]="name" required />
+    </label>
+    <div class="error" *ngIf="!name.trim() && f.submitted">Введите имя</div>
+
+    <label>
+      E-mail
+      <input name="email" [(ngModel)]="email" required type="email" />
+    </label>
+    <div class="error" *ngIf="(!email.trim() || (email && !(/\S+@\S+\.\S+/.test(email)))) && f.submitted">Введите корректный email</div>
+
+    <label>
+      Сообщение
+      <textarea name="message" [(ngModel)]="message" rows="6" required></textarea>
+    </label>
+    <div class="error" *ngIf="!message.trim() && f.submitted">Введите сообщение</div>
+
+    <div class="actions">
+      <button type="submit">Отправить</button>
+    </div>
+  </form>
+
+  <div class="success" *ngIf="submitted">Спасибо! Ваше сообщение отправлено.</div>
+</section>
