@@ -8,12 +8,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.css',
 })
-
 export class Portfolio implements OnInit, OnDestroy {
   showModal = false;
   isMenuOpen = false;
 
-  // Свойства для анимации набора текста
   private typingTexts = ['Frontend Dev', 'Full-Stack Dev', 'Web Designer', 'Script Writer', 'Software Engineer'];
   private currentTextIndex = 0;
   private currentCharIndex = 0;
@@ -35,50 +33,37 @@ export class Portfolio implements OnInit, OnDestroy {
       this.cdRef.detectChanges();
     }, 500);
 
-    // Добавляем слушатель скролла для header
     this.scrollListener = this.onWindowScroll.bind(this);
     window.addEventListener('scroll', this.scrollListener);
 
-    // Инициализируем состояние при загрузке
     this.onWindowScroll();
   }
 
   ngOnDestroy() {
-    if (this.typingTimeout) {
-      clearTimeout(this.typingTimeout);
-    }
-    if (this.cursorInterval) {
-      clearInterval(this.cursorInterval);
-    }
+    if (this.typingTimeout) clearTimeout(this.typingTimeout);
+    if (this.cursorInterval) clearInterval(this.cursorInterval);
 
-    // Удаляем слушатель скролла
-    if (this.scrollListener) {
-      window.removeEventListener('scroll', this.scrollListener);
-    }
+    if (this.scrollListener) window.removeEventListener('scroll', this.scrollListener);
 
-    // Убираем класс при уничтожении компонента
     this.removeMenuOpenClasses();
   }
 
-  // Обработчик скролла для добавления тени к header
   private onWindowScroll() {
     const header = document.querySelector('header');
-    if (header) {
-      if (window.scrollY > 50) { // Порог появления тени
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
   }
 
-  // Вспомогательный метод для удаления классов
   private removeMenuOpenClasses() {
     document.body.classList.remove('menu-open');
     document.documentElement.classList.remove('menu-open');
   }
 
-  // Вспомогательный метод для добавления классов
   private addMenuOpenClasses() {
     document.body.classList.add('menu-open');
     document.documentElement.classList.add('menu-open');
@@ -87,14 +72,12 @@ export class Portfolio implements OnInit, OnDestroy {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
 
-    // Блокируем прокрутку страницы при открытом меню
     if (this.isMenuOpen) {
       this.addMenuOpenClasses();
     } else {
       this.removeMenuOpenClasses();
     }
 
-    // Принудительно запускаем обнаружение изменений
     this.cdRef.detectChanges();
   }
 
@@ -104,31 +87,24 @@ export class Portfolio implements OnInit, OnDestroy {
     this.cdRef.detectChanges();
   }
 
-  // Обновленный метод для навигации
   scrollToSection(sectionId: string, event: Event): void {
     event.preventDefault();
 
-    // Закрыть меню на мобильных
     this.closeMenu();
 
     if (sectionId === 'home') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offset = 80; // Высота хедера
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
+
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }
 
   startTypingAnimation() {
@@ -141,55 +117,44 @@ export class Portfolio implements OnInit, OnDestroy {
     let typingSpeed = 100;
 
     if (this.isDeleting) {
-      // Удаление текста по одному символу
-      if (this.currentCharIndex > 4) { // Удаляем только после "I'm " (4 символа)
+      if (this.currentCharIndex > 4) {
         this.currentCharIndex--;
         this.displayedText = fullText.substring(0, this.currentCharIndex);
         typingSpeed = 50;
       } else {
-        // Достигли "I'm " - переход к следующему тексту
         this.isDeleting = false;
         this.currentTextIndex = (this.currentTextIndex + 1) % this.typingTexts.length;
-        typingSpeed = 500; // Пауза перед началом нового текста
+        typingSpeed = 500;
       }
     } else {
-      // Набор текста по одному символу
       if (this.currentCharIndex < fullText.length) {
         this.currentCharIndex++;
         this.displayedText = fullText.substring(0, this.currentCharIndex);
         typingSpeed = 100;
       } else {
-        // Текст полностью набран - пауза перед удалением
         this.isDeleting = true;
-        typingSpeed = 2000; // Пауза перед началом удаления
+        typingSpeed = 2000;
       }
     }
 
-    // Принудительно запускаем обнаружение изменений
     this.cdRef.detectChanges();
 
-    // Продолжаем анимацию
     this.typingTimeout = setTimeout(() => {
       this.typeNextCharacter();
     }, typingSpeed);
   }
 
-  // Получаем часть текста до "I'm " (всегда "I'm")
   getImText(): string {
     return "I'm ";
   }
 
-  // Получаем часть текста после "I'm " (профессия)
   getProfessionText(): string {
-    if (this.displayedText.startsWith("I'm ")) {
-      return this.displayedText.substring(4);
-    }
+    if (this.displayedText.startsWith("I'm ")) return this.displayedText.substring(4);
     return this.displayedText.startsWith("I'm") ? this.displayedText.substring(3) : this.displayedText;
   }
 
-  // Проверяем, показывать ли "I'm" (когда начали набирать)
   shouldShowIm(): boolean {
-    return this.displayedText.length >= 2; // Показываем когда есть хотя бы "I"
+    return this.displayedText.length >= 2;
   }
 
   showComingSoon(event: Event) {
@@ -209,9 +174,6 @@ export class Portfolio implements OnInit, OnDestroy {
     const isMenuButton = target.closest('.menu-toggle');
     const isMenu = target.closest('nav');
 
-    // Закрываем меню если:
-    // 1. Кликнули на оверлей ИЛИ
-    // 2. Кликнули не по меню и не по кнопке меню, когда меню открыто
     if ((isMenuOverlay && this.isMenuOpen) || (!isMenu && !isMenuButton && this.isMenuOpen)) {
       this.closeMenu();
     }
@@ -219,64 +181,50 @@ export class Portfolio implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    // Закрываем меню при увеличении ширины экрана
-    if (window.innerWidth > 995) {
-      this.closeMenu();
-    }
+    if (window.innerWidth > 995) this.closeMenu();
   }
 
-  // Дополнительный обработчик для клавиши Escape
   @HostListener('document:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Escape') {
-      if (this.isMenuOpen) {
-        this.closeMenu();
-      }
-      if (this.showModal) {
-        this.showModal = false;
-      }
-    }
+    if (event.key !== 'Escape') return;
+
+    if (this.isMenuOpen) this.closeMenu();
+    if (this.showModal) this.showModal = false;
   }
 
-  // Методы для подвала и навигации
   scrollToTop(event: Event): void {
     event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Метод для навигации по ссылкам в подвале
   navigateTo(event: Event, href: string): void {
     event.preventDefault();
 
     if (href.startsWith('#')) {
       const sectionId = href.substring(1);
       this.scrollToSection(sectionId, event);
-    } else {
-      // Внешние ссылки открываются в новой вкладке
-      window.open(href, '_blank');
+      return;
     }
+
+    window.open(href, '_blank');
   }
 
-  // Метод для отправки email
   sendEmail(event: Event): void {
     event.preventDefault();
     window.location.href = 'mailto:ivandetad@gmail.com';
   }
 
-  // Метод для копирования email в буфер обмена
   copyEmail(event: Event): void {
     event.preventDefault();
     const email = 'ivandetad@gmail.com';
 
-    navigator.clipboard.writeText(email).then(() => {
-      // Можно добавить уведомление об успешном копировании
-      console.log('Email скопирован в буфер обмена:', email);
-      // Здесь можно показать toast-уведомление
-    }).catch(err => {
-      console.error('Ошибка копирования:', err);
-    });
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        console.log('Email скопирован в буфер обмена:', email);
+      })
+      .catch(err => {
+        console.error('Ошибка копирования:', err);
+      });
   }
 }
