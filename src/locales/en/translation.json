@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "logo": "CALSEL",
+    "home": "Home",
+    "works": "Works",
+    "contact": "Contact",
+    "contact_me": "Contact me"
+  },
+  "hero": {
+    "greeting": "Hello!",
+    "name_line": "It's Ivan",
+    "subtitle": "I can do some great things for you.",
+    "banner_explore": "Explore my Works",
+    "banner_explore_small": "Explore",
+    "cta_contact": "Contact me",
+    "titles": ["Frontend Dev", "Full-Stack Dev", "Web Designer", "Script Writer", "Software Engineer"]
+  },
+  "footer": {
+    "brand": "Calsel",
+    "copy": "I create modern landing pages for businesses.",
+    "ctaTitle": "Ready to launch your landing page?",
+    "ctaSubtitle": "Fast, modern and conversion-focused websites.",
+    "ctaButton": "Contact me",
+    "rights": "All rights reserved."
+  },
+  "hire": {
+    "title": "Ready to work together?",
+    "subtitle": "Tell me about your project and let's build something great.",
+    "name_placeholder": "Your Name",
+    "telegram_placeholder": "Telegram @username",
+    "project_placeholder": "Tell me about your project...",
+    "send": "Send inquiry",
+    "reply_time": "I’ll get back to you within 24 hours."
+  }
+  ,
+  "work": {
+    "title_prefix": "My",
+    "title_highlight": "Projects",
+    "subtitle": "Selected works that demonstrate my skills and experience",
+    "github": "GitHub",
+    "demo": "Demo",
+    "cta_text": "Want to see more projects?",
+    "cta_link": "Contact me"
+  }
+  ,
+  "faq": {
+    "title": "Frequently \n Asked Questions",
+    "subtitle": "Everything you need to know.",
+    "items": [
+      {
+        "question": "How much does a landing page cost?",
+        "answer": "The price depends on project complexity, number of sections and extra features. Typically pricing starts from a basic one-page site and is calculated individually after discussing your requirements."
+      },
+      {
+        "question": "How long does development take?",
+        "answer": "A simple landing usually takes 3–7 days. It depends on content, revisions and approval speed."
+      },
+      {
+        "question": "Will the site be responsive?",
+        "answer": "Yes — every landing is fully responsive for mobile, tablet and desktop and works correctly in modern browsers."
+      },
+      {
+        "question": "Can you help with deployment?",
+        "answer": "Yes — I can help set up domain, hosting and deploy the site. I can also configure basic SEO."
+      },
+      {
+        "question": "Can I request changes after launch?",
+        "answer": "Of course. After project completion I provide a period of free fixes and can offer ongoing support if needed."
+      }
+    ]
+  }
+}
