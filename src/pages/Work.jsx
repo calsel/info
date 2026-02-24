@@ -134,7 +134,7 @@ const Work = () => {
                       href={project.github}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='px-3 py-1 text-sm border border-slate-300 text-slate-700 dark:text-gray-500 dark:border-black rounded-lg hover:border-blue-600 transition'
+                      className='px-3 py-1 text-sm border border-slate-300 text-white dark:border-black rounded-lg hover:border-blue-600 transition'
                     >
                       {t("work.github")}
                     </a>

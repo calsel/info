@@ -60,7 +60,7 @@ const Faq = () => {
               >
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-6 py-5 text-left text-lg font-semibold text-slate-900 dark:text-gray-500"
+                  className="w-full flex justify-between items-center px-6 py-5 text-left text-lg font-semibold text-white"
                 >
                   {faq.question}
                   <span

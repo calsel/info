@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
@@ -8,22 +8,6 @@ const NavBar = () => {
   const container = useRef();
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") return "light";
-    const stored = localStorage.getItem("theme");
-    if (stored === "light" || stored === "dark") return stored;
-    return "light";
-  });
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const isDark = theme === "dark";
-    root.classList.toggle("dark", isDark);
-    root.setAttribute("data-theme", theme);
-    document.body.classList.toggle("dark", isDark);
-    document.body.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   useGSAP(
     () => {
@@ -74,30 +58,6 @@ const NavBar = () => {
             <div className="flex items-center gap-2">
               <button onClick={() => i18n.changeLanguage("en")} className="px-2">EN</button>
               <button onClick={() => i18n.changeLanguage("ru")} className="px-2">RU</button>
-              <div className="flex items-center rounded-full border border-slate-300/70 dark:border-slate-600/70 p-0.5">
-                <button
-                  type="button"
-                  onClick={() => setTheme("light")}
-                  className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide transition ${
-                    theme === "light"
-                      ? "bg-blue-600 text-white"
-                      : "text-slate-600 dark:text-slate-300 hover:text-blue-600"
-                  }`}
-                >
-                  Light
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTheme("dark")}
-                  className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide transition ${
-                    theme === "dark"
-                      ? "bg-blue-600 text-white"
-                      : "text-slate-600 dark:text-slate-300 hover:text-blue-600"
-                  }`}
-                >
-                  Dark
-                </button>
-              </div>
             </div>
           </div>
 
@@ -139,30 +99,6 @@ const NavBar = () => {
             <div className="flex justify-center gap-4">
               <button onClick={() => i18n.changeLanguage("en")}>EN</button>
               <button onClick={() => i18n.changeLanguage("ru")}>RU</button>
-              <div className="flex items-center rounded-full border border-slate-300/70 dark:border-slate-600/70 p-0.5">
-                <button
-                  type="button"
-                  onClick={() => setTheme("light")}
-                  className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide transition ${
-                    theme === "light"
-                      ? "bg-blue-600 text-white"
-                      : "text-slate-600 dark:text-slate-300 hover:text-blue-600"
-                  }`}
-                >
-                  Light
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTheme("dark")}
-                  className={`px-3 py-1 rounded-full text-xs uppercase tracking-wide transition ${
-                    theme === "dark"
-                      ? "bg-blue-600 text-white"
-                      : "text-slate-600 dark:text-slate-300 hover:text-blue-600"
-                  }`}
-                >
-                  Dark
-                </button>
-              </div>
             </div>
           </div>
         )}
