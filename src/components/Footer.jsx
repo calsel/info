@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram, FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,10 +14,10 @@ const Footer = () => {
   useGSAP(() => {
     gsap.from(".footer-item", {
       opacity: 0,
-      y: 50,
+      y: 60,
       duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
+      stagger: 0.25,
+      ease: "power4.out",
       scrollTrigger: {
         trigger: container.current,
         start: "top 85%",
@@ -26,19 +26,23 @@ const Footer = () => {
   }, { scope: container });
 
   return (
-    <footer ref={container} className="relative mt-24">
+    <footer ref={container} className="relative mt-32 overflow-hidden">
+
+      {/* Glow background */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 blur-[180px] rounded-full pointer-events-none" />
 
       {/* Gradient divider */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-600/40 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="relative max-w-6xl mx-auto px-6 py-24">
 
         {/* CTA */}
-        <div className="footer-item text-center mb-14">
-          <h2 className="text-3xl font-bold text-slate-100 leading-tight">
+        <div className="footer-item text-center mb-20">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-white via-blue-400 to-blue-600 bg-clip-text text-transparent">
             {t("footer.ctaTitle")}
           </h2>
-          <p className="mt-3 text-slate-400 max-w-2xl mx-auto">
+
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
             {t("footer.ctaSubtitle")}
           </p>
 
@@ -46,30 +50,42 @@ const Footer = () => {
             href="https://t.me/calsel"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium shadow-lg shadow-blue-600/20"
+            className="group inline-flex items-center gap-3 mt-8 px-10 py-4 rounded-2xl 
+            bg-gradient-to-r from-blue-600 to-blue-700 
+            hover:from-blue-500 hover:to-blue-600 
+            transition-all duration-300 
+            text-white font-semibold 
+            shadow-xl shadow-blue-600/30 
+            hover:shadow-blue-500/40 
+            hover:scale-105"
           >
+            <FaTelegram className="text-lg group-hover:rotate-12 transition" />
             {t("footer.ctaButton")}
           </a>
         </div>
 
-        {/* Main Footer */}
-        <div className="footer-item bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-3xl p-8 md:p-10 text-center">
+        {/* Main Footer Card */}
+        <div className="footer-item bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 text-center shadow-2xl shadow-black/40">
 
-          <h3 className="text-xl font-semibold text-slate-100">
+          <h3 className="text-2xl font-semibold text-white tracking-wide">
             {t("footer.brand")}
           </h3>
 
-          <p className="mt-3 text-slate-400 text-sm">
+          <p className="mt-4 text-slate-400 text-sm max-w-md mx-auto">
             {t("footer.copy")}
           </p>
 
-          <div className="mt-6 flex justify-center gap-4">
-
+          <div className="mt-8 flex justify-center gap-6">
             <a
               href="https://t.me/calsel"
               target="_blank"
               rel="noopener noreferrer"
-              className="size-11 flex items-center justify-center rounded-full bg-slate-900/60 border border-neutral-800 text-slate-200 hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
+              className="size-12 flex items-center justify-center rounded-full 
+              bg-slate-900/60 border border-white/10 
+              text-slate-200 
+              hover:border-blue-500 hover:text-blue-400 
+              hover:shadow-lg hover:shadow-blue-600/30 
+              transition-all duration-300 hover:-translate-y-1"
             >
               <FaTelegram />
             </a>
@@ -78,34 +94,21 @@ const Footer = () => {
               href="https://github.com/calsel"
               target="_blank"
               rel="noopener noreferrer"
-              className="size-11 flex items-center justify-center rounded-full bg-slate-900/60 border border-neutral-800 text-slate-200 hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
+              className="size-12 flex items-center justify-center rounded-full 
+              bg-slate-900/60 border border-white/10 
+              text-slate-200 
+              hover:border-blue-500 hover:text-blue-400 
+              hover:shadow-lg hover:shadow-blue-600/30 
+              transition-all duration-300 hover:-translate-y-1"
             >
-              <svg
-                className="size-5"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 0C3.58 0 0 3.58 0 8a8.013 8.013 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
-                0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-                -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-                .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
-                0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12
-                0 0 .67-.21 2.2.82A7.66 7.66 0 0 1 8 4.8c.68 0 1.36.09 2 .27
-                1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
-                .51.56.82 1.27.82 2.15
-                0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
-                0 1.07-.01 1.93-.01 2.2
-                0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8
-                c0-4.42-3.58-8-8-8z"/>
-              </svg>
+              <FaGithub />
             </a>
-
           </div>
-
         </div>
 
-        <div className="footer-item mt-10 text-center text-slate-500 text-sm">
-          (c) 2026 Calsel. {t("footer.rights")}
+        {/* Bottom */}
+        <div className="footer-item mt-12 text-center text-slate-500 text-sm tracking-wide">
+          © 2026 Calsel. {t("footer.rights")}
         </div>
 
       </div>
