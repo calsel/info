@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div
       ref={bgRef}
-      className="min-h-screen app-bg text-slate-900 dark:text-slate-100"
+      className="min-h-screen app-bg text-slate-100"
     >
       <NavBar />
 

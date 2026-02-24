@@ -25,11 +25,11 @@ const NavBar = () => {
     <div ref={container}>
       <header className="sticky top-0 pt-4 inset-x-0 z-50 nav-wrapper">
         <nav className="relative max-w-5xl mx-auto
-                        bg-slate-50/80 dark:bg-slate-900/70
-                        border border-slate-200/70 dark:border-slate-700/60
+                        bg-slate-900/70
+                        border border-slate-700/60
                         backdrop-blur-2xl shadow-xl
                         rounded-[24px] p-3 px-6
-                        flex items-center justify-between text-slate-900 dark:text-slate-100">
+                        flex items-center justify-between text-slate-100">
 
           {/* Logo */}
           <Link className="text-xl font-semibold tracking-wide" to="/">
@@ -38,13 +38,13 @@ const NavBar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="nav-link text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition">
+            <Link to="/" className="nav-link text-slate-200 hover:text-blue-400 transition">
               {t("nav.home")}
             </Link>
-            <Link to="/work" className="nav-link text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition">
+            <Link to="/work" className="nav-link text-slate-200 hover:text-blue-400 transition">
               {t("nav.works")}
             </Link>
-            <Link to="/contacts" className="nav-link text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition">
+            <Link to="/contacts" className="nav-link text-slate-200 hover:text-blue-400 transition">
               {t("nav.contact")}
             </Link>
 
@@ -66,18 +66,18 @@ const NavBar = () => {
             className="md:hidden flex flex-col gap-1"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className="w-6 h-0.5  bg-black dark:bg-white"></span>
-            <span className="w-6 h-0.5 bg-black dark:bg-white"></span>
-            <span className="w-6 h-0.5 bg-black dark:bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
+            <span className="w-6 h-0.5 bg-white"></span>
           </button>
         </nav>
 
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden mt-3 mx-4
-                          bg-slate-50/90 dark:bg-slate-900/90
+                          bg-slate-900/90
                           backdrop-blur-xl rounded-2xl p-6
-                          flex flex-col gap-5 text-center shadow-lg text-slate-900 dark:text-white">
+                          flex flex-col gap-5 text-center shadow-lg text-slate-100">
             <Link to="/" onClick={() => setIsOpen(false)}>
               {t("nav.home")}
             </Link>

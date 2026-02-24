@@ -60,7 +60,7 @@ const Hire = () => {
     setStatus("sending");
 
     const message = [
-      "New inquiry from portfolio",
+      "New inquiry:",
       `Name: ${form.name}`,
       `Telegram: ${form.telegram}`,
       `Project: ${form.project}`,
@@ -93,15 +93,15 @@ const Hire = () => {
     <section ref={container} className="pt-50">
       <div className="text-gs max-w-5xl mx-auto px-6">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
+          <h1 className="text-4xl font-bold text-slate-100">
             {t('hire.title')}
           </h1>
-          <p className="mt-3 text-slate-600 dark:text-gray-400">
+          <p className="mt-3 text-slate-400">
             {t('hire.subtitle')}
           </p>
         </div>
 
-        <div className="mt-12 bg-slate-50/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200/80 dark:border-neutral-700 rounded-3xl p-8 shadow-2xl">
+        <div className="mt-12 bg-white/5 backdrop-blur-xl border border-neutral-700 rounded-3xl p-8 shadow-2xl">
           <form onSubmit={handleSubmit}>
             <div className="grid gap-6">
 
@@ -112,7 +112,7 @@ const Hire = () => {
                 required
                 value={form.name}
                 onChange={handleChange}
-                className="w-full bg-slate-50/90 dark:bg-transparent border border-slate-300 dark:border-neutral-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 
+                className="w-full bg-slate-900/60 border border-neutral-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-400 
                            focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/30
                            transition duration-300"
               />
@@ -125,7 +125,7 @@ const Hire = () => {
                 required
                 value={form.telegram}
                 onChange={handleChange}
-                className="w-full bg-slate-50/90 dark:bg-transparent border border-slate-300 dark:border-neutral-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 
+                className="w-full bg-slate-900/60 border border-neutral-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-400 
                            focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/30
                            transition duration-300"
               />
@@ -137,7 +137,7 @@ const Hire = () => {
                 required
                 value={form.project}
                 onChange={handleChange}
-                className="w-full bg-slate-50/90 dark:bg-transparent border border-slate-300 dark:border-neutral-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 
+                className="w-full bg-slate-900/60 border border-neutral-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-400 
                            focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/30
                            transition duration-300"
               ></textarea>
@@ -164,7 +164,7 @@ const Hire = () => {
                 </p>
               )}
 
-              <p className="text-center text-sm text-slate-500 dark:text-gray-500">
+              <p className="text-center text-sm text-slate-500">
                 {t('hire.reply_time')}
               </p>
 

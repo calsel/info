@@ -93,11 +93,11 @@ const Work = () => {
       <div className='wrapper max-w-[85rem] px-6 mx-auto'>
         {/* Title */}
         <div className='max-w-2xl text-center mx-auto mb-14'>
-          <h2 className='text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100'>
+          <h2 className='text-3xl md:text-5xl font-bold text-slate-100'>
             {t("work.title_prefix")}{" "}
             <span className='text-blue-600'>{t("work.title_highlight")}</span>
           </h2>
-          <p className='mt-4 text-slate-600 dark:text-gray-500'>
+          <p className='mt-4 text-slate-400'>
             {t("work.subtitle")}
           </p>
         </div>
@@ -107,7 +107,7 @@ const Work = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className='group flex flex-col bg-slate-50/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200/80 dark:border-neutral-800 rounded-2xl overflow-hidden hover:border-blue-600/40 transition duration-300'
+              className='group flex flex-col bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-2xl overflow-hidden hover:border-blue-600/40 transition duration-300'
             >
               {/* Image */}
               <div className='aspect-[16/9] overflow-hidden'>
@@ -124,7 +124,7 @@ const Work = () => {
                   {project.category}
                 </p>
 
-                <h3 className='mt-2 text-lg font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-500 transition'>
+                <h3 className='mt-2 text-lg font-semibold text-slate-100 group-hover:text-blue-500 transition'>
                   {project.title}
                 </h3>
 
@@ -134,7 +134,7 @@ const Work = () => {
                       href={project.github}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='px-3 py-1 text-sm border border-slate-300 text-white dark:border-black rounded-lg hover:border-blue-600 transition'
+                      className='px-3 py-1 text-sm border border-slate-600 text-slate-200 rounded-lg hover:border-blue-600 transition'
                     >
                       {t("work.github")}
                     </a>
@@ -158,8 +158,8 @@ const Work = () => {
 
         {/* Bottom CTA */}
         <div className='text-center'>
-          <div className='inline-block bg-slate-50/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200/80 dark:border-neutral-800 rounded-full px-6 py-3'>
-            <span className='text-slate-600 dark:text-gray-400'>
+          <div className='inline-block bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-full px-6 py-3'>
+            <span className='text-slate-400'>
               {t("work.cta_text")}
             </span>
             <Link
