@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div ref={container}>
       <header className="sticky top-0 pt-4 inset-x-0 z-50 nav-wrapper">
-        <nav className="relative max-w-5xl mx-auto
+        <nav className="relative max-w-6xl mx-auto
                         bg-slate-900/70
                         border border-slate-700/60
                         backdrop-blur-2xl shadow-xl

@@ -26,7 +26,7 @@ const Footer = () => {
   }, { scope: container });
 
   return (
-    <footer ref={container} className="relative mt-32">
+    <footer ref={container} className="relative mt-24">
 
       {/* Gradient divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-600/40 to-transparent" />
@@ -35,10 +35,10 @@ const Footer = () => {
 
         {/* CTA */}
         <div className="footer-item text-center mb-14">
-          <h2 className="text-3xl font-bold text-slate-100">
+          <h2 className="text-3xl font-bold text-slate-100 leading-tight">
             {t("footer.ctaTitle")}
           </h2>
-          <p className="mt-3 text-slate-400">
+          <p className="mt-3 text-slate-400 max-w-2xl mx-auto">
             {t("footer.ctaSubtitle")}
           </p>
 
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         {/* Main Footer */}
-        <div className="footer-item bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-3xl p-10 text-center">
+        <div className="footer-item bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-3xl p-8 md:p-10 text-center">
 
           <h3 className="text-xl font-semibold text-slate-100">
             {t("footer.brand")}
@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-item mt-10 text-center text-slate-500 text-sm">
-          © 2026 Calsel. {t("footer.rights")}
+          (c) 2026 Calsel. {t("footer.rights")}
         </div>
 
       </div>

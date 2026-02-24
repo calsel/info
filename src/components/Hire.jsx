@@ -90,8 +90,8 @@ const Hire = () => {
   };
 
   return (
-    <section ref={container} className="pt-50">
-      <div className="text-gs max-w-5xl mx-auto px-6">
+    <section ref={container} className="py-24">
+      <div className="text-gs max-w-6xl mx-auto px-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-slate-100">
             {t('hire.title')}
@@ -103,7 +103,7 @@ const Hire = () => {
 
         <div className="mt-12 bg-white/5 backdrop-blur-xl border border-neutral-700 rounded-3xl p-8 shadow-2xl">
           <form onSubmit={handleSubmit}>
-            <div className="grid gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
 
               <input
                 type="text"
@@ -137,7 +137,7 @@ const Hire = () => {
                 required
                 value={form.project}
                 onChange={handleChange}
-                className="w-full bg-slate-900/60 border border-neutral-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-400 
+                className="md:col-span-2 w-full bg-slate-900/60 border border-neutral-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-400 
                            focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/30
                            transition duration-300"
               ></textarea>
@@ -145,7 +145,7 @@ const Hire = () => {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-4 w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed
+                className="md:col-span-2 mt-4 w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed
                            transition duration-300 text-white font-medium shadow-lg
                            hover:shadow-blue-600/40"
               >
@@ -153,18 +153,18 @@ const Hire = () => {
               </button>
 
               {status === "success" && (
-                <p className="text-center text-sm text-emerald-600">
+                <p className="md:col-span-2 text-center text-sm text-emerald-600">
                   Message sent. I will reply soon.
                 </p>
               )}
 
               {status === "error" && (
-                <p className="text-center text-sm text-rose-600">
+                <p className="md:col-span-2 text-center text-sm text-rose-600">
                   {errorText || "Failed to send. Please try again."}
                 </p>
               )}
 
-              <p className="text-center text-sm text-slate-500">
+              <p className="md:col-span-2 text-center text-sm text-slate-500">
                 {t('hire.reply_time')}
               </p>
 

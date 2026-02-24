@@ -89,8 +89,8 @@ const Work = () => {
     { scope: container },
   );
   return (
-    <section ref={container} className='pt-32'>
-      <div className='wrapper max-w-[85rem] px-6 mx-auto'>
+    <section ref={container} className='py-24'>
+      <div className='wrapper max-w-6xl px-6 mx-auto'>
         {/* Title */}
         <div className='max-w-2xl text-center mx-auto mb-14'>
           <h2 className='text-3xl md:text-5xl font-bold text-slate-100'>
@@ -103,11 +103,11 @@ const Work = () => {
         </div>
 
         {/* Grid */}
-        <div className='text-gs1 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14'>
+        <div className='text-gs1 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14'>
           {projects.map((project, index) => (
             <div
               key={index}
-              className='group flex flex-col bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-2xl overflow-hidden hover:border-blue-600/40 transition duration-300'
+              className='group flex flex-col bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-2xl overflow-hidden hover:border-blue-600/40 hover:-translate-y-1 transition duration-300'
             >
               {/* Image */}
               <div className='aspect-[16/9] overflow-hidden'>
@@ -134,7 +134,7 @@ const Work = () => {
                       href={project.github}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='px-3 py-1 text-sm border border-slate-600 text-slate-200 rounded-lg hover:border-blue-600 transition'
+                      className='px-3 py-1 text-sm border border-slate-600/80 text-slate-200 rounded-lg hover:border-blue-600 transition'
                     >
                       {t("work.github")}
                     </a>
@@ -158,7 +158,7 @@ const Work = () => {
 
         {/* Bottom CTA */}
         <div className='text-center'>
-          <div className='inline-block bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-full px-6 py-3'>
+          <div className='inline-block bg-white/5 backdrop-blur-xl border border-neutral-800/80 rounded-full px-6 py-3'>
             <span className='text-slate-400'>
               {t("work.cta_text")}
             </span>
@@ -166,7 +166,7 @@ const Work = () => {
               to='/contacts'
               className='ml-2 text-blue-500 hover:underline font-medium'
             >
-              {t("work.cta_link")} →
+              {t("work.cta_link")} {"\u003e"}
             </Link>
           </div>
         </div>
@@ -176,3 +176,4 @@ const Work = () => {
 };
 
 export default Work;
+
