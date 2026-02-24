@@ -43,10 +43,10 @@ const Faq = () => {
           
           {/* Left Side */}
           <div className="faq-item md:col-span-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100">
               {t('faq.title')}
             </h2>
-            <p className="mt-4 text-gray-400">
+            <p className="mt-4 text-slate-600 dark:text-gray-400">
               {t('faq.subtitle')}
             </p>
           </div>
@@ -56,11 +56,11 @@ const Faq = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="faq-item border border-neutral-700 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md"
+                className="faq-item border border-slate-200/80 dark:border-neutral-700 rounded-2xl overflow-hidden bg-slate-50/80 dark:bg-white/5 backdrop-blur-md"
               >
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-6 py-5 text-left text-lg font-semibold text-white"
+                  className="w-full flex justify-between items-center px-6 py-5 text-left text-lg font-semibold text-slate-900 dark:text-gray-500"
                 >
                   {faq.question}
                   <span
@@ -79,7 +79,7 @@ const Faq = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-gray-400">{faq.answer}</p>
+                  <p className="text-slate-600 dark:text-gray-400">{faq.answer}</p>
                 </div>
               </div>
             ))}

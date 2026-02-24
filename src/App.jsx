@@ -26,12 +26,7 @@ const App = () => {
   return (
     <div
       ref={bgRef}
-      className="min-h-screen"
-      style={{
-        background: "linear-gradient(135deg, #030712, #0f172a, #1e1b4b)",
-        backgroundSize: "400% 400%",
-        backgroundPosition: "0% 0%",
-      }}
+      className="min-h-screen app-bg text-slate-900 dark:text-slate-100"
     >
       <NavBar />
 

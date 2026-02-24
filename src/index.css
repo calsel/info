@@ -1,3 +1,49 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
+html, body, #root {
+	height: 100%;
+}
+
+:root {
+	color-scheme: light;
+	--app-bg: linear-gradient(135deg, #f1f5f9, #e2e8f0, #e0e7ff);
+	--surface: rgba(248, 250, 252, 0.85);
+	--surface-strong: rgba(241, 245, 249, 0.95);
+	--border-color: rgba(15, 23, 42, 0.12);
+	--text-primary: #0f172a;
+	--text-muted: #475569;
+}
+
+.dark {
+	color-scheme: dark;
+	--app-bg: linear-gradient(135deg, #030712, #0f172a, #1e1b4b);
+	--surface: rgba(15, 23, 42, 0.7);
+	--surface-strong: rgba(15, 23, 42, 0.9);
+	--border-color: rgba(148, 163, 184, 0.25);
+	--text-primary: #e2e8f0;
+	--text-muted: #94a3b8;
+}
+
+body {
+	background: var(--app-bg);
+	color: var(--text-primary);
+}
+
+.app-bg {
+	background: var(--app-bg);
+	background-size: 400% 400%;
+	background-position: 0% 0%;
+}
+
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6 {
+	color: var(--text-primary);
+}
+
+html[data-theme="light"] p {
+	color: var(--text-muted);
+}

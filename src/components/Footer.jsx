@@ -35,10 +35,10 @@ const Footer = () => {
 
         {/* CTA */}
         <div className="footer-item text-center mb-14">
-          <h2 className="text-3xl font-bold text-white">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
             {t("footer.ctaTitle")}
           </h2>
-          <p className="mt-3 text-gray-400">
+          <p className="mt-3 text-slate-600 dark:text-gray-400">
             {t("footer.ctaSubtitle")}
           </p>
 
@@ -53,13 +53,13 @@ const Footer = () => {
         </div>
 
         {/* Main Footer */}
-        <div className="footer-item bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-3xl p-10 text-center">
+        <div className="footer-item bg-slate-50/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200/80 dark:border-neutral-800 rounded-3xl p-10 text-center">
 
-          <h3 className="text-xl font-semibold text-white">
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
             {t("footer.brand")}
           </h3>
 
-          <p className="mt-3 text-gray-400 text-sm">
+          <p className="mt-3 text-slate-600 dark:text-gray-400 text-sm">
             {t("footer.copy")}
           </p>
 
@@ -69,7 +69,7 @@ const Footer = () => {
               href="https://t.me/calsel"
               target="_blank"
               rel="noopener noreferrer"
-              className="size-11 flex items-center justify-center rounded-full bg-white/5 border border-neutral-700 hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
+              className="size-11 flex items-center justify-center rounded-full bg-black dark:bg-black border border-slate-200/80 dark:border-neutral-800 text-slate-700 dark:text-white hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
             >
               <FaTelegram />
             </a>
@@ -78,7 +78,7 @@ const Footer = () => {
               href="https://github.com/calsel"
               target="_blank"
               rel="noopener noreferrer"
-              className="size-11 flex items-center justify-center rounded-full bg-white/5 border border-neutral-700 hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
+              className="size-11 flex items-center justify-center rounded-full bg-slate-50/80 dark:bg-black border border-slate-200/80 dark:border-neutral-800 text-slate-700 dark:text-white hover:border-blue-600 hover:text-blue-500 hover:shadow-lg hover:shadow-blue-600/20 transition"
             >
               <svg
                 className="size-5"
@@ -104,7 +104,7 @@ const Footer = () => {
 
         </div>
 
-        <div className="footer-item mt-10 text-center text-gray-500 text-sm">
+        <div className="footer-item mt-10 text-center text-slate-500 dark:text-gray-500 text-sm">
           © 2026 Calsel. {t("footer.rights")}
         </div>
 

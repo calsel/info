@@ -93,7 +93,7 @@ const HeroSection = () => {
           {/* Announcement Banner */}
           <div className='flex justify-center pb-15'>
             <Link
-              className='inline-flex items-center gap-x-2 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-xs text-gray-800 dark:text-white p-2 px-3 rounded-full transition hover:border-gray-300 dark:hover:border-neutral-600 focus:outline-hidden focus:border-gray-300 dark:focus:border-neutral-600'
+              className='inline-flex items-center gap-x-2 bg-slate-50/90 dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-xs text-slate-800 dark:text-white p-2 px-3 rounded-full transition hover:border-gray-300 dark:hover:border-neutral-600 focus:outline-hidden focus:border-gray-300 dark:focus:border-neutral-600'
               to='/work'
             >
               {t('hero.banner_explore')}
@@ -121,11 +121,11 @@ const HeroSection = () => {
           {/* End Announcement Banner */}
           {/* Title */}
           <div className='mt-5 max-w-xl text-center mx-auto'>
-            <h1 className='text-gs block font-bold text-gray-800 dark:text-neutral-200 text-4xl md:text-5xl lg:text-6xl'>
+            <h1 className='text-gs block font-bold text-slate-900 dark:text-slate-100 text-4xl md:text-5xl lg:text-6xl'>
               <span className='text-blue-600 animate-pulse'>{t('hero.greeting')}</span> {t('hero.name_line')}
             </h1>
 
-            <h2 className=' text-gs2 mt-4 block font-bold text-gray-800 dark:text-neutral-200 text-3xl md:text-4xl lg:text-5xl min-h-[60px]'>
+            <h2 className=' text-gs2 mt-4 block font-bold text-slate-900 dark:text-slate-100 text-3xl md:text-4xl lg:text-5xl min-h-[60px]'>
               I'm{" "}
               <span className='text-blue-600'>
                 {displayedText.replace("I'm ", "")}
@@ -135,7 +135,7 @@ const HeroSection = () => {
           </div>
 
           <div className='text-gs3 mt-5 max-w-3xl text-center mx-auto'>
-            <p className='animate-pulse text-xl text-gray-600 dark:text-neutral-300'>
+            <p className='animate-pulse text-xl text-slate-700 dark:text-neutral-300'>
             {t('hero.subtitle')}
             </p>
           </div>
