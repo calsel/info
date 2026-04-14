@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import en from "../locales/en/translation.json";
 import ru from "../locales/ru/translation.json";
 
@@ -10,34 +10,42 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Faq = () => {
   const { t, i18n } = useTranslation();
-  const faqsRaw = t('faq.items', { returnObjects: true, defaultValue: [] });
+
+  const faqsRaw = t("faq.items", { returnObjects: true, defaultValue: [] });
   const fallbackFaqs = i18n.language?.startsWith("ru")
     ? ru?.faq?.items
     : en?.faq?.items;
-  const faqs = Array.isArray(faqsRaw) && faqsRaw.length
-    ? faqsRaw
-    : (Array.isArray(fallbackFaqs) ? fallbackFaqs : []);
+
+  const faqs =
+    Array.isArray(faqsRaw) && faqsRaw.length
+      ? faqsRaw
+      : Array.isArray(fallbackFaqs)
+      ? fallbackFaqs
+      : [];
 
   const container = useRef();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useGSAP(
     () => {
       const items = gsap.utils.toArray(".faq-item");
-      gsap.set(items, { opacity: 0, x: -24 });
 
-      ScrollTrigger.batch(items, {
-        start: "top 85%",
-        once: true,
-        onEnter: (batch) => {
-          gsap.to(batch, {
-            opacity: 1,
-            x: -100,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: "power2.out",
-            clearProps: "transform,opacity",
-          });
+      // начальное состояние
+      gsap.set(items, {
+        opacity: 0,
+        y: 40,
+      });
+
+      // нормальная анимация появления
+      gsap.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 80%",
         },
       });
     },
@@ -56,10 +64,10 @@ const Faq = () => {
           {/* Left Side */}
           <div className="faq-item md:col-span-2">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-100">
-              {t('faq.title')}
+              {t("faq.title")}
             </h2>
             <p className="mt-4 text-slate-400 text-sm md:text-base">
-              {t('faq.subtitle')}
+              {t("faq.subtitle")}
             </p>
           </div>
 
@@ -91,7 +99,9 @@ const Faq = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-slate-400 leading-relaxed">{faq.answer}</p>
+                  <p className="text-slate-400 leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}

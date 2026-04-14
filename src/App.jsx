@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Contacts from "./pages/Contacts";
+import Decorations from "./components/Decorations";
 
 const App = () => {
   const bgRef = useRef();
@@ -24,16 +25,14 @@ const App = () => {
   });
 
   return (
-    <div
-      ref={bgRef}
-      className="min-h-screen app-bg text-slate-100"
-    >
+    <div ref={bgRef} className='min-h-screen app-bg text-slate-100'>
       <NavBar />
+      <Decorations />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/work' element={<Work />} />
+        <Route path='/contacts' element={<Contacts />} />
       </Routes>
 
       <Footer />

@@ -13,10 +13,16 @@
     "banner_explore": "Explore my Works",
     "banner_explore_small": "Explore",
     "cta_contact": "Contact me",
-    "titles": ["Frontend Dev", "Full-Stack Dev", "Web Designer", "GO Developer", "Software Engineer"]
+    "titles": [
+      "Frontend Dev",
+      "Full-Stack Dev",
+      "Web Designer",
+      "GO Developer",
+      "Software Engineer"
+    ]
   },
   "footer": {
-    "brand": "Calsel",
+    "brand": "CALSEL",
     "copy": "I create modern landing pages for businesses.",
     "ctaTitle": "Ready to launch your landing page?",
     "ctaSubtitle": "Fast, modern and conversion-focused websites.",
@@ -31,8 +37,7 @@
     "project_placeholder": "Tell me about your project...",
     "send": "Send inquiry",
     "reply_time": "I’ll get back to you within 24 hours."
-  }
-  ,
+  },
   "work": {
     "title_prefix": "My",
     "title_highlight": "Projects",
@@ -40,9 +45,9 @@
     "github": "GitHub",
     "demo": "Demo",
     "cta_text": "Want to see more projects?",
-    "cta_link": "Contact me"
-  }
-  ,
+    "cta_link": "Contact me",
+    "contact_me": "Discuss projects"
+  },
   "faq": {
     "title": "Frequently \n Asked Questions",
     "subtitle": "Everything you need to know.",

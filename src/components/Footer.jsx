@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaTelegram, FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,33 +13,42 @@ const Footer = () => {
   const { t } = useTranslation();
 
   useGSAP(() => {
-    gsap.from(".footer-item", {
+    const items = gsap.utils.toArray(".footer-item");
+
+    gsap.set(items, {
       opacity: 0,
-      y: 60,
-      duration: 1,
-      stagger: 0.25,
-      ease: "power4.out",
+      y: 40,
+    });
+
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out",
       scrollTrigger: {
         trigger: container.current,
         start: "top 85%",
+        once: true,
       },
     });
   }, { scope: container });
 
   return (
     <footer ref={container} className="relative mt-32 overflow-hidden">
-
       {/* Glow background */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 blur-[180px] rounded-full pointer-events-none" />
 
-      {/* Gradient divider */}
+      {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
       <div className="relative max-w-6xl mx-auto px-6 py-24">
 
         {/* CTA */}
         <div className="footer-item text-center mb-20">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-white via-blue-400 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold leading-tight pb-1 
+          bg-gradient-to-r from-white via-blue-400 to-blue-600 
+          bg-clip-text text-transparent">
             {t("footer.ctaTitle")}
           </h2>
 
@@ -46,25 +56,23 @@ const Footer = () => {
             {t("footer.ctaSubtitle")}
           </p>
 
-          <a
-            href="https://t.me/calsel"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contacts"
             className="group inline-flex items-center gap-3 mt-8 px-10 py-4 rounded-2xl 
             bg-gradient-to-r from-blue-600 to-blue-700 
             hover:from-blue-500 hover:to-blue-600 
             transition-all duration-300 
             text-white font-semibold 
             shadow-xl shadow-blue-600/30 
-            hover:shadow-blue-500/40 
-            hover:scale-105"
+            hover:shadow-blue-500/50 
+            hover:scale-105 active:scale-95"
           >
             <FaTelegram className="text-lg group-hover:rotate-12 transition" />
             {t("footer.ctaButton")}
-          </a>
+          </Link>
         </div>
 
-        {/* Main Footer Card */}
+        {/* Card */}
         <div className="footer-item bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 text-center shadow-2xl shadow-black/40">
 
           <h3 className="text-2xl font-semibold text-white tracking-wide">
@@ -76,10 +84,9 @@ const Footer = () => {
           </p>
 
           <div className="mt-8 flex justify-center gap-6">
-            <a
-              href="https://t.me/calsel"
-              target="_blank"
-              rel="noopener noreferrer"
+            
+            <Link
+              to="/contacts"
               className="size-12 flex items-center justify-center rounded-full 
               bg-slate-900/60 border border-white/10 
               text-slate-200 
@@ -88,7 +95,7 @@ const Footer = () => {
               transition-all duration-300 hover:-translate-y-1"
             >
               <FaTelegram />
-            </a>
+            </Link>
 
             <a
               href="https://github.com/calsel"
@@ -103,6 +110,7 @@ const Footer = () => {
             >
               <FaGithub />
             </a>
+
           </div>
         </div>
 

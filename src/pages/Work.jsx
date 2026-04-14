@@ -4,41 +4,6 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const projects = [
-  {
-    category: "Angular",
-    title: "Portfolio Website",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
-    demo: "https://calsel.github.io/info/",
-    github: "https://github.com/calsel/info",
-  },
-  {
-    category: "Angular 17+",
-    title: "Task Planner",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=900&q=80",
-    demo: "https://calsel.github.io/planner/planner",
-    github: "https://github.com/calsel/planner",
-  },
-  {
-    category: "Next.js",
-    title: "House Staff Shop",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-    demo: "https://shop-nextjs-ecru.vercel.app/",
-    github: null,
-  },
-  {
-    category: "Telegram Bot",
-    title: "Support Bot Integration",
-    image:
-      "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=900&q=80",
-    demo: "https://test-xnec.vercel.app/",
-    github: null,
-  },
-];
-
 const Work = () => {
   const { t } = useTranslation();
   const container = useRef();
@@ -48,132 +13,77 @@ const Work = () => {
       const tl = gsap.timeline();
 
       tl.from(".wrapper", {
-        x: -200,
+        y: 60,
         opacity: 0,
         duration: 1,
-        ease: "power2.out",
+        ease: "power3.out",
       })
         .from(
-          ".text-gs",
+          ".text-gs1",
           {
-            y: -20,
+            y: 30,
             opacity: 0,
-            stagger: 0.1,
-            duration: 1,
-            ease: "power2.out",
+            duration: 0.8,
+            ease: "power3.out",
           },
-          "-=0.5",
+          "-=0.5"
         )
-        .from(".text-gs2", {
-          y: -50,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 1,
-          ease: "power2.out",
-        })
-        .from(".text-gs3", {
-          y: -50,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 1,
-          ease: "power2.out",
-        })
-        .from("text-gs4", {
-          y: -50,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 1,
-          ease: "power2.out",
-        });
+        .from(
+          ".text-gs2",
+          {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        );
     },
-    { scope: container },
+    { scope: container }
   );
+
   return (
-    <section ref={container} className='py-24'>
-      <div className='wrapper max-w-6xl px-6 mx-auto'>
+    <section ref={container} className="py-32">
+      <div className="wrapper max-w-4xl mx-auto px-6 text-center">
+
         {/* Title */}
-        <div className='max-w-2xl text-center mx-auto mb-14'>
-          <h2 className='text-3xl md:text-5xl font-bold text-slate-100'>
+        <div className="text-gs1">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
             {t("work.title_prefix")}{" "}
-            <span className='text-blue-600'>{t("work.title_highlight")}</span>
+            <span className="text-blue-600">
+              {t("work.title_highlight")}
+            </span>
           </h2>
-          <p className='mt-4 text-slate-400'>
+
+          <p className="mt-6 text-slate-400 text-lg">
             {t("work.subtitle")}
           </p>
         </div>
 
-        {/* Grid */}
-        <div className='text-gs1 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14'>
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className='group flex flex-col bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-2xl overflow-hidden hover:border-blue-600/40 hover:-translate-y-1 transition duration-300'
-            >
-              {/* Image */}
-              <div className='aspect-[16/9] overflow-hidden'>
-                <img
-                  className='w-full h-full object-cover group-hover:scale-105 transition duration-500'
-                  src={project.image}
-                  alt={project.title}
-                />
-              </div>
+        {/* CTA Card */}
+        <div className="text-gs2 mt-12 bg-white/5 backdrop-blur-xl border border-neutral-800 rounded-3xl p-10 shadow-2xl">
 
-              {/* Content */}
-              <div className='text-gs2 p-5 flex flex-col flex-grow'>
-                <p className='text-xs uppercase text-blue-500 tracking-wider'>
-                  {project.category}
-                </p>
+          <p className="text-slate-300 text-lg mb-6">
+            {t("work.cta_text")}
+          </p>
 
-                <h3 className='mt-2 text-lg font-semibold text-slate-100 group-hover:text-blue-500 transition'>
-                  {project.title}
-                </h3>
-
-                <div className='text-gs3 mt-auto pt-6 flex gap-3'>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='px-3 py-1 text-sm border border-slate-600/80 text-slate-200 rounded-lg hover:border-blue-600 transition'
-                    >
-                      {t("work.github")}
-                    </a>
-                  )}
-
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gs4 px-3 py-1 text-sm bg-blue-600 hover:bg-blue-700 text-slate-50 rounded-lg transition'
-                    >
-                      {t("work.demo")}
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+          <Link
+            to="/contacts"
+            className="inline-block px-8 py-4 text-lg font-semibold rounded-2xl 
+            bg-gradient-to-r from-blue-600 to-blue-700 
+            hover:from-blue-500 hover:to-blue-600 
+            text-white 
+            transition-all duration-300 
+            hover:scale-105 
+            shadow-xl shadow-blue-600/30"
+          >
+            {t("work.contact_me")}
+          </Link>
         </div>
 
-        {/* Bottom CTA */}
-        <div className='text-center'>
-          <div className='inline-block bg-white/5 backdrop-blur-xl border border-neutral-800/80 rounded-full px-6 py-3'>
-            <span className='text-slate-400'>
-              {t("work.cta_text")}
-            </span>
-            <Link
-              to='/contacts'
-              className='ml-2 text-blue-500 hover:underline font-medium'
-            >
-              {t("work.cta_link")} {"\u003e"}
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
 export default Work;
-
